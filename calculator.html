@@ -58,10 +58,18 @@ function div() {
     if (!values) return;
     let [a, b] = values;
 
-    if (b === 0) {
-        document.getElementById("result").innerText = "Cannot divide by zero";
-        return;
-    }
+    if (a === "" || b === "") {
+    document.getElementById("result").innerText = "Invalid Input";
+    document.getElementById("result").style.color = "red"; // 👈 ikkada
+    return null;
+}
+if (b === 0) {
+    document.getElementById("result").innerText = "Cannot divide by zero";
+    document.getElementById("result").style.color = "red"; // 👈 ikkada
+    return;
+}
+document.getElementById("result").innerText = a + b;
+document.getElementById("result").style.color = "green"; // 👈 success
 
     document.getElementById("result").innerText = a / b;
 }
